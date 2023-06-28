@@ -46,5 +46,14 @@ public class RequestDto {
     private Integer loss;
     @Size(min = 0, max = 5, message = "big_family_to_register")
     private List<String> relations;
-
+    @Size(min = 3, max = 30, message = "chinese_or_german_probably")
+    private String bestRelationName;
+    @Pattern(regexp = "\\D{2}\\d{19}", message = "two_non_digits_and_nineteen_digits")
+    private String identity;
+    @Digits(integer = 1, fraction = 2, message = "can_be_the_first_thing_you_imagined")
+    private BigDecimal piNumber;
+    @AssertTrue(message = "let_us_make_money")
+    private Boolean approveGdpr;
+    @AssertFalse(message = "go_away_trinity")
+    private Boolean isHacker;
 }
